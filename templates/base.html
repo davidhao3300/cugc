@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CU Games Club</title>
+        <link href="{{ url_for('.static', filename='css/bootstrap.min.css') }}" rel="stylesheet" media="screen">
+        <link href="{{ url_for('.static', filename='css/bootstrap-responsive.min.css') }}" rel="stylesheet">
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <script src="{{ url_for('.static', filename='js/bootstrap.min.js') }}"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class="container">
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <a class="brand" href="{{ url_for('index') }}">CU Games Club</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="span12">
+                    {% block content %}{% endblock %}
+                </div>
+            </div>
+        </div>   
+    </body>
+</html>
