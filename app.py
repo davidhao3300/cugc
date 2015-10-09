@@ -6,6 +6,8 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'postgresql://localhost/cugc')
 db = SQLAlchemy(app)
 
+import models
+
 @app.route('/')
 def index():
     return render_template('index.html')
