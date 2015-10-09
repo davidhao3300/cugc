@@ -1,0 +1,11 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+<h3> GAMES </h3>
+<table class="table table-hover">
+  {% for game in games.items %}
+    <tr>{{ game.name }}</tr>
+  {% endfor %}
+</table>
+{% endblock %}
