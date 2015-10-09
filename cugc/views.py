@@ -16,7 +16,7 @@ def index():
 @app.route('/games')
 @app.route('/games/<int:page>')
 def games(page=1):
-    return render_template('games.html', games=Game.query.paginate(page, 10, False))
+    return render_template('games.html', games=Game.query.order_by('name ASC').paginate(page, 10, False))
 
 @app.route('/admin')
 def admin():
