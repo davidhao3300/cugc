@@ -2,10 +2,36 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h3> GAMES </h3>
-<table class="table table-hover">
-  {% for game in games.items %}
-    <tr>{{ game.name }}</tr>
-  {% endfor %}
+<table class="table table-striped table-hover table-bordered">
+    <thead>
+        <th class="col-xs-1"></th>
+        <th><h3>Name<h3></th>
+    </thead>
+    <tbody>
+        {% for game in games.items %}
+            <tr>
+                <th scope='row'>
+                    <img src="{{ game.pic_url }}" />
+                </th>
+                <td style="vertical-align:middle"><a href="{{ game.url }}"><h3>{{ game.name }}</h3></a></td>
+            </tr>
+        {% endfor %}
+    </tbody>
 </table>
+<div class="col-xs-5"></div>
+<div class="col-xs-2">
+    <ul class="pager">
+        {% if games.has_prev %}
+            <li class="previous"><a href="{{ url_for('games', page=games.prev_num) }}">Previous</a></li>
+        {% else %}
+            <li class="previous disabled"><a>Previous</a></li>
+        {% endif %}
+        {% if games.has_next %}
+            <li class="next"><a href="{{ url_for('games', page=games.next_num) }}">Next</a></li>
+        {% else %}
+            <li class="next disabled"><a>Next</a></li>
+        {% endif %}
+    </ul>
+</div>
+<div class="col-xs-5"></div>
 {% endblock %}
