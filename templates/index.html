@@ -2,5 +2,24 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h2>Under construction!</h2>
+<h3 style="text-align:center;">Home</h3>
+<p style="font-size:18px;text-align: justify;">
+    Welcome to Columbia University Games Club, bringing gaming unplugged to Columbia for over 50 years! Feel free to drop by our
+    weekly meetings on Fridays 8 pm in Lerner SGO Space when you feel like astounding your opponents in your mastery of board games. There 
+    are no formalities, no sign-ins - just come in, pick up a game, and play!<br />
+    <br />
+    Our Board Games Inventory contain everything from family classics like Scrabble and Stratego, to German-style games like Settlers of Catan and Puerto Rico, 
+    to thematic games like Lord of the Rings and Betrayal at the House on the Hill.
+    To check out the board games we have to offer, click on [Inventory] above.<br />
+    <br />
+    Other Information:
+</p>
+<form class="form-default" action="index.php" method="POST">
+    <ul style="font-size:18px;text-align: justify;">
+        <li>
+            To sign up for our mailing list, or for any questions, email: <b>cug4mes@gmail.com<b>
+        </li>
+        <li>Our next meeting will be: <b>{{ meeting_date }}</b></li>
+    </ul>
+</form>
 {% endblock %}
