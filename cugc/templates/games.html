@@ -9,9 +9,9 @@
     </thead>
     <tbody>
         {% for game in games.items %}
-            <tr>
+            <tr style="height:150px">
                 <th scope='row'>
-                    <img src="{{ game.pic_url }}" />
+                    <img style="max-height:150px" src="{{ game.pic_url }}" />
                 </th>
                 <td style="vertical-align:middle"><a href="{{ game.url }}"><h3>{{ game.name }}</h3></a></td>
             </tr>
